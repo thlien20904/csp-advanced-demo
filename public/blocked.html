@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Blocked Inline JS</title>
+  </head>
+  <body>
+    <h1>🚫 Inline script bị chặn bởi CSP</h1>
+
+    <script>
+      // This inline script should be blocked by the CSP header set for /blocked
+      console.log("blocked inline script (should be blocked)");
+      document.body.insertAdjacentHTML(
+        "beforeend",
+        '<p id="blocked">❌ If you see this, CSP did NOT block inline script.</p>'
+      );
+
+      // Gửi log pass (nếu chạy được, dù không được phép)
+      fetch("/api/log-pass", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          page: "/blocked",
+          directive: "script-src",
+          timestamp: new Date().toLocaleString("vi-VN"),
+        }),
+      });
+    </script>
+
+    <p>
+      Mở DevTools → Console để xem CSP violation. Sau đó kiểm tra /report-log để
+      xem báo cáo.
+    </p>
+  </body>
+</html>

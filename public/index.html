@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CSP Demo — Home</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main style="max-width: 1100px; margin: 18px auto; padding: 18px">
+      <header style="text-align: center; margin-bottom: 18px">
+        <h1>🧠 CSP Demo</h1>
+        <p style="color: #546e7a">
+          Demo các kỹ thuật Content Security Policy: chặn inline JS, cho phép
+          bằng hash hoặc nonce, và giám sát vi phạm.
+        </p>
+      </header>
+
+      <section
+        class="grid"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          justify-content: center;
+        "
+      >
+        <a
+          class="card"
+          href="/blocked"
+          style="text-decoration: none; min-width: 220px; max-width: 320px"
+        >
+          <div
+            style="
+              background: #fff;
+              padding: 16px;
+              border-radius: 8px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            "
+          >
+            <h3>🚫 /blocked</h3>
+            <p style="margin: 6px 0; color: #556">
+              Inline script bị chặn bởi CSP (xem DevTools)
+            </p>
+          </div>
+        </a>
+
+        <a
+          class="card"
+          href="/hash"
+          style="text-decoration: none; min-width: 220px; max-width: 320px"
+        >
+          <div
+            style="
+              background: #fff;
+              padding: 16px;
+              border-radius: 8px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            "
+          >
+            <h3>✅ /hash</h3>
+            <p style="margin: 6px 0; color: #556">
+              Cho phép script inline bằng SHA256 hash
+            </p>
+          </div>
+        </a>
+
+        <a
+          class="card"
+          href="/nonce"
+          style="text-decoration: none; min-width: 220px; max-width: 320px"
+        >
+          <div
+            style="
+              background: #fff;
+              padding: 16px;
+              border-radius: 8px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            "
+          >
+            <h3>🔐 /nonce</h3>
+            <p style="margin: 6px 0; color: #556">
+              Cho phép script inline bằng nonce (mỗi request khác nhau)
+            </p>
+          </div>
+        </a>
+
+        <a
+          class="card"
+          href="/report-log"
+          style="text-decoration: none; min-width: 220px; max-width: 320px"
+        >
+          <div
+            style="
+              background: #fff;
+              padding: 16px;
+              border-radius: 8px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            "
+          >
+            <h3>📁 /report-log</h3>
+            <p style="margin: 6px 0; color: #556">
+              Dashboard realtime hiển thị các CSP violation
+            </p>
+          </div>
+        </a>
+
+        <a
+          class="card"
+          href="/analyze"
+          style="text-decoration: none; min-width: 220px; max-width: 320px"
+        >
+          <div
+            style="
+              background: #fff;
+              padding: 16px;
+              border-radius: 8px;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            "
+          >
+            <h3>📈 /analyze</h3>
+            <p style="margin: 6px 0; color: #556">
+              Phân tích thống kê (Chart.js) — Pass / Fail
+            </p>
+          </div>
+        </a>
+      </section>
+
+      <footer style="text-align: center; margin-top: 20px; color: #889">
+        Made for learning CSP — demo only
+      </footer>
+    </main>
+  </body>
+</html>
